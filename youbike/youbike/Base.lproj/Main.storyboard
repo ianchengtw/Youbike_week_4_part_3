@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j5p-4e-Wib">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--YouBike-->
+        <scene sceneID="V6K-Pw-GaZ">
+            <objects>
+                <tableViewController id="Hza-6x-gHM" customClass="RootViewController" customModule="youbike" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="JzX-9q-hkg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Hza-6x-gHM" id="HbO-zy-IZo"/>
+                            <outlet property="delegate" destination="Hza-6x-gHM" id="b5p-SM-KDn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="YouBike" id="qzK-XA-I5I"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ipa-uG-WRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="350"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="rd0-fq-UA3">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="50t-Kw-raL" customClass="MapViewController" customModule="youbike" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lzF-Qa-80I"/>
+                        <viewControllerLayoutGuide type="bottom" id="UEo-Mr-8h4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="abc-2b-s4a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VpJ-kf-Mms" customClass="MyMap" customModule="youbike" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJ1-8f-xIA" userLabel="StationView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="122"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="122" id="hix-Ca-JpS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PJ1-8f-xIA" firstAttribute="top" secondItem="lzF-Qa-80I" secondAttribute="bottom" id="4bi-N5-FQa"/>
+                            <constraint firstItem="VpJ-kf-Mms" firstAttribute="centerX" secondItem="abc-2b-s4a" secondAttribute="centerX" id="A5T-93-YQj"/>
+                            <constraint firstItem="VpJ-kf-Mms" firstAttribute="width" secondItem="abc-2b-s4a" secondAttribute="width" id="DKC-22-XN7"/>
+                            <constraint firstItem="PJ1-8f-xIA" firstAttribute="width" secondItem="abc-2b-s4a" secondAttribute="width" id="E4t-Za-B0s"/>
+                            <constraint firstItem="PJ1-8f-xIA" firstAttribute="height" secondItem="abc-2b-s4a" secondAttribute="height" constant="-478" id="Gev-sg-ejB"/>
+                            <constraint firstItem="UEo-Mr-8h4" firstAttribute="top" secondItem="PJ1-8f-xIA" secondAttribute="bottom" constant="478" id="SHQ-yb-Ron"/>
+                            <constraint firstItem="VpJ-kf-Mms" firstAttribute="centerY" secondItem="abc-2b-s4a" secondAttribute="centerY" id="TQu-Lz-hNG"/>
+                            <constraint firstItem="PJ1-8f-xIA" firstAttribute="centerX" secondItem="abc-2b-s4a" secondAttribute="centerX" id="dKU-4t-R8T"/>
+                            <constraint firstItem="VpJ-kf-Mms" firstAttribute="height" secondItem="abc-2b-s4a" secondAttribute="height" id="hwO-WR-Mkd"/>
+                            <constraint firstItem="PJ1-8f-xIA" firstAttribute="centerY" secondItem="abc-2b-s4a" secondAttribute="centerY" constant="-239" id="xhD-h4-3uP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Gev-sg-ejB"/>
+                                <exclude reference="xhD-h4-3uP"/>
+                                <exclude reference="SHQ-yb-Ron"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="myMapView" destination="VpJ-kf-Mms" id="Tsh-J0-FBg"/>
+                        <outlet property="stationView" destination="PJ1-8f-xIA" id="Fpv-Is-hXJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VK8-5u-GDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="343"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GAM-Lm-VtJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j5p-4e-Wib" customClass="NavigationController" customModule="youbike" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rIA-N5-Dix">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hza-6x-gHM" kind="relationship" relationship="rootViewController" id="xmf-qr-ktm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EVr-oG-6Ey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="350"/>
+        </scene>
+    </scenes>
+</document>
